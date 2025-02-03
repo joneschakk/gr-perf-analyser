@@ -1,0 +1,28 @@
+#log or plot
+type_of_operation: plot
+logfile_path: logfile
+
+perf_logger:
+  #select between avg, inst, var or all
+  val_type: all
+  host: localhost
+  port: 12345
+  interval: 10 #set an interval to poll for values in sec
+
+plotter:
+  #3d plots for latency vs time and buffer% vs time
+  #2d plots for other plots across rest of the perf counters
+  type: 3d
+  #3d plot 
+  #plot buffer% vs time 0
+  #plot lat vs time - 1
+  #plot total work vs time -2
+  3dplot_type: 0
+  #2d plots
+  #avg, inst, var
+  val_type: avg
+  #add a keyword in the block name to identify the block
+  search_blk: 43 #packet_headergenerator_bb_impl0 #
+  #1-to get a snapshot for all blks at the first looged timestamp
+  #0-to get data for a specific blk across all timestamps
+  all_blocks: 1
