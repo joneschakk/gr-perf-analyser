@@ -348,12 +348,15 @@ def plt_plotter(config):
                             cntr+=1
                             # sub_cntr+=1           
             with open('blocklist.log','w') as log:
+                log.write("Latency\n----------\n")
                 for j, blk in enumerate(blocklist_n_buff["latency"].keys()):
-                    log.write(str(j)+':'+blk)
+                    log.write(str(j)+':'+blk+'\n')
+                log.write("----------\nO/P Buff\n----------\n")
                 for j, blk in enumerate(blocklist_n_buff["out_buff"].keys()):
-                    log.write(str(j)+':'+blk)
+                    log.write(str(j)+':'+blk+'\n')
+                log.write("----------\nI/P Buff\n----------\n")
                 for j, blk in enumerate(blocklist_n_buff["in_buff"].keys()):
-                    log.write(str(j)+':'+blk)
+                    log.write(str(j)+':'+blk+'\n')
             if lat:
                 ax.set_xlabel('Blocks')
                 ax.set_ylabel('Time(s)')
